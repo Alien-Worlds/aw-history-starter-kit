@@ -91,8 +91,7 @@ In the `bootstrap`
 directory, create an `index.ts` file and add the following content:
 
 ```typescript
-import { startBootstrap } from '@alien-worlds/api-history-tools';
-import { DefaultBootstrapDependencies } from '@alien-worlds/history-tools-default-dependencies';
+import { startBootstrap, DefaultBootstrapDependencies } from '@alien-worlds/history-tools-starter-kit';
 import path from 'path';
 
 startBootstrap(
@@ -107,7 +106,7 @@ startBootstrap(
 In the `broadcast` directory, create an `index.ts` file and add the following content:
 
 ```typescript
-import { startBroadcast } from '@alien-worlds/api-history-tools';
+import { startBroadcast } from '@alien-worlds/history-tools-starter-kit';
 
 startBroadcast();
 ```
@@ -117,8 +116,7 @@ startBroadcast();
 In the `reader` directory, create an `index.ts` file and add the following content:
 
 ```typescript
-import { startReader } from '@alien-worlds/api-history-tools';
-import { DefaultReaderDependencies } from '@alien-worlds/history-tools-default-dependencies';
+import { startReader, DefaultReaderDependencies } from '@alien-worlds/history-tools-starter-kit';
 
 startReader(process.argv, new DefaultReaderDependencies());
 ```
@@ -128,8 +126,7 @@ startReader(process.argv, new DefaultReaderDependencies());
 In the `filter` directory, create an `index.ts` file and add the following content:
 
 ```typescript
-import { startFilter } from '@alien-worlds/api-history-tools';
-import { DefaultFilterDependencies } from '@alien-worlds/history-tools-default-dependencies';
+import { startFilter, DefaultFilterDependencies } from '@alien-worlds/history-tools-starter-kit';
 import path from 'path';
 
 startFilter(
@@ -144,8 +141,7 @@ startFilter(
 In the `processor` directory, create an `index.ts` file and add the following content:
 
 ```typescript
-import { startProcessor } from '@alien-worlds/api-history-tools';
-import { DefaultProcessorDependencies } from '@alien-worlds/history-tools-default-dependencies';
+import { startProcessor, DefaultProcessorDependencies } from '@alien-worlds/history-tools-starter-kit';
 import path from 'path';
 
 startProcessor(
@@ -168,7 +164,7 @@ export * from './dao-worlds.delta-processor';
 ...
 
 // ./processors/dao-worlds.trace-processor.ts
-import { ActionTraceProcessor, ProcessorTaskModel } from '@alien-worlds/api-history-tools';
+import { ActionTraceProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
 
 export class DaoWorldsTraceProcessor extends ActionTraceProcessor {
   public async run(model: ProcessorTaskModel): Promise<void> {
@@ -182,7 +178,7 @@ export class DaoWorldsTraceProcessor extends ActionTraceProcessor {
 }
 
 // ./processors/dao-worlds.delta-processor.ts
-import { DeltaProcessor, ProcessorTaskModel } from '@alien-worlds/api-history-tools';
+import { DeltaProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
 
 export class DaoWorldsDeltaProcessor extends DeltaProcessor {
   public async run(model: ProcessorTaskModel): Promise<void> {
