@@ -43,7 +43,7 @@ To further enhance ease-of-use, this package provides `creators` that take the h
 - `BlockReaderCreator`
 - `BlockStateCreator`
 - `BlockchainServiceCreator`
-- `FeaturedCreator`
+- `FeaturedContractsCreator`
 - `ProcessortaskQueueCreator`
 - `ShipAbisCreator`
 - `UnprocessedBlockQueueCreator`
@@ -70,7 +70,7 @@ The remaining folders name correspond to the history tools processes and contain
    - _`BroadcastClient`_
    - _`Abis`_
    - _`BlockRangeScanner`_
-   - _`Featured`_
+   - _`FeaturedContracts`_
    - _`BlockState`_
    - _`BlockchainService`_
 
@@ -96,15 +96,15 @@ The remaining folders name correspond to the history tools processes and contain
    - _`ProcessorTaskQueue`_
    - _`Abis`_
    - _`ShipAbis`_
-   - _`Featured`_
+   - _`FeaturedContracts`_
    - _`EosSerializer`_
 
 4. **Processor:** Requires `DefaultProcessorDependencies` passed to the processor command. Dependencies:
 
    - _`BroadcastClient`_
    - _`ProcessorTaskQueue`_
-   - _`FeaturedMapper<ContractTraceMatchCriteria>`_
-   - _`FeaturedMapper<ContractDeltaMatchCriteria>`_
+   - _`Featured<ContractTraceMatchCriteria>`_
+   - _`Featured<ContractDeltaMatchCriteria>`_
 
    The second file is `ProcessorWorkerLoaderDependencies` which is instantiated in the worker loader and the path to this file is given in `DefaultProcessorDependencies`. Dependencies:
 
