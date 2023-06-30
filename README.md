@@ -21,6 +21,7 @@ This package is dependent on the following packages:
 - [Installation](#installation)
 - [Common Components](#common-components)
 - [Processes](#processes)
+- [Tutorials](#tutorials)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -109,6 +110,11 @@ The remaining folders name correspond to the history tools processes and contain
 
    - _`MongoSource`_
    - _`EosSerializer`_
+
+
+## Tutorials
+
+- [Using History Tools Starter Kit](./tutorials/using-history-tools-starter-kit.md)
 
 ## Contributing
 
