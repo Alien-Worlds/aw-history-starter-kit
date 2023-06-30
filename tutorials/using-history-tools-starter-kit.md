@@ -8,7 +8,7 @@ The History Tools Starter Kit provides an efficient implementation of history to
 
 ## Step 1: Set Up MongoDB
 
-Begin by setting up your MongoDB database. This can be done locally or using Docker. For this tutorial, we'll be using a local setup. Ensure that your database is exposed on localhost, using port like `27077`.
+Begin by setting up your MongoDB database. This can be done locally or using Docker. For this tutorial, we'll be using a local setup. Ensure that your database is exposed on localhost, using port like `27017`.
 
 ## Step 2: Create New TypeScript npm Project
 
@@ -152,10 +152,9 @@ startProcessor(
 );
 ```
 
-
 ## Step 6: Create Processors Folder
 
-Finally, create a `processors` folder where you will store all of the processor files. The contents of this folder should be exported in `index.ts`, and each processor should be exported default.
+Finally, create a `processors` folder where you will store all of the processor files. The contents of this folder should be exported in `index.ts`, and each processor should be exported as a default.
 
 ```typescript
 // ./processors/index.ts
@@ -166,7 +165,7 @@ export * from './dao-worlds.delta-processor';
 // ./processors/dao-worlds.trace-processor.ts
 import { ActionTraceProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
 
-export class DaoWorldsTraceProcessor extends ActionTraceProcessor {
+export default class DaoWorldsTraceProcessor extends ActionTraceProcessor {
   public async run(model: ProcessorTaskModel): Promise<void> {
     try {
       //... all of your operations
@@ -180,7 +179,7 @@ export class DaoWorldsTraceProcessor extends ActionTraceProcessor {
 // ./processors/dao-worlds.delta-processor.ts
 import { DeltaProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
 
-export class DaoWorldsDeltaProcessor extends DeltaProcessor {
+export default class DaoWorldsDeltaProcessor extends DeltaProcessor {
   public async run(model: ProcessorTaskModel): Promise<void> {
     try {
       //... all of your operations
