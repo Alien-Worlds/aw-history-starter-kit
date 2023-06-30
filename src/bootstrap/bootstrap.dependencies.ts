@@ -20,8 +20,9 @@ import {
   FeaturedUtils,
   BroadcastTcpClient,
   Failure,
+  FeaturedContracts,
 } from '@alien-worlds/api-history-tools';
-import { FeaturedCreator } from '../common/featured';
+import { FeaturedContractsCreator } from '../common/featured';
 import { BlockRangeScannerCreator } from '../common/block-range-scanner';
 import { BlockStateCreator } from '../common/block-state';
 import { BlockchainServiceCreator } from '../common';
@@ -30,10 +31,9 @@ export class DefaultBootstrapDependencies implements BootstrapDependencies {
   public broadcastClient: BroadcastClient;
   public abis: Abis;
   public scanner: BlockRangeScanner;
-  public featured: Featured;
+  public featuredContracts: FeaturedContracts;
   public blockState: BlockState;
   public blockchain: BlockchainService;
-  public featuredContracts: BlockchainService;
   public databaseConfigBuilder: DatabaseConfigBuilder = buildMongoConfig;
 
   public async initialize(
@@ -48,7 +48,7 @@ export class DefaultBootstrapDependencies implements BootstrapDependencies {
         config.broadcast,
         'bootstrap'
       );
-      this.featured = await FeaturedCreator.create(
+      this.featuredContracts = await FeaturedContractsCreator.create(
         mongoSource,
         config.featured,
         featuredCriteria

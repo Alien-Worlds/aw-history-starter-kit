@@ -6,8 +6,7 @@ import {
   ContractTraceMatchCriteria,
   DatabaseConfigBuilder,
   Failure,
-  FeaturedContractDataCriteria,
-  FeaturedMapper,
+  Featured,
   FeaturedUtils,
   MissingCriteriaError,
   ProcessorAddons,
@@ -26,8 +25,8 @@ import path from 'path';
 
 export class DefaultProcessorDependencies implements ProcessorDependencies {
   public broadcastClient: BroadcastClient;
-  public featuredTraces: FeaturedMapper<ContractTraceMatchCriteria>;
-  public featuredDeltas: FeaturedMapper<ContractDeltaMatchCriteria>;
+  public featuredTraces: Featured<ContractTraceMatchCriteria>;
+  public featuredDeltas: Featured<ContractDeltaMatchCriteria>;
   public processorTaskQueue: ProcessorTaskQueue;
   public processorsPath: string;
   public databaseConfigBuilder: DatabaseConfigBuilder = buildMongoConfig;
@@ -58,19 +57,30 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
         config.queue
       );
 
-      this.featuredTraces = new FeaturedMapper(featuredCriteria.traces, {
-        shipTraceMessageName: [],
-        shipActionTraceMessageName: [],
-        contract: [],
-        action: [],
-      });
-      this.featuredDeltas = new FeaturedMapper(featuredCriteria.deltas, {
-        shipDeltaMessageName: [],
-        name: [],
-        code: [],
-        scope: [],
-        table: [],
-      });
+      this.featuredTraces = new Featured(
+        featuredCriteria.traces,
+        {
+          shipTraceMessageName: [],
+          shipActionTraceMessageName: [],
+          contract: [],
+          action: [],
+        },
+        {
+          shipTraceMessageName: ['transaction_trace_v0'],
+          shipActionTraceMessageName: ['action_trace_v0', 'action_trace_v1'],
+        }
+      );
+      this.featuredDeltas = new Featured(
+        featuredCriteria.deltas,
+        {
+          shipDeltaMessageName: [],
+          name: [],
+          code: [],
+          scope: [],
+          table: [],
+        },
+        { shipDeltaMessageName: ['table_delta_v0'] }
+      );
 
       return Result.withoutContent();
     } catch (error) {

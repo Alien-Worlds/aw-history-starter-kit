@@ -1,6 +1,7 @@
 import {
   Abis,
   Featured,
+  FeaturedContracts,
   FeaturedUtils,
   FilterConfig,
   FilterWorkerLoaderDependencies,
@@ -10,7 +11,11 @@ import {
   ShipAbis,
 } from '@alien-worlds/api-history-tools';
 import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
-import { AbisCreator, FeaturedCreator, ProcessortaskQueueCreator } from '../common';
+import {
+  AbisCreator,
+  FeaturedContractsCreator,
+  ProcessortaskQueueCreator,
+} from '../common';
 import { EosSerializer } from '@alien-worlds/eos';
 import { ShipAbisCreator } from '../common/ship/ship-abis.creator';
 
@@ -20,7 +25,7 @@ export default class DefaultFilterWorkerLoaderDependencies
   public processorTaskQueue: ProcessorTaskQueue;
   public abis: Abis;
   public shipAbis: ShipAbis;
-  public featured: Featured;
+  public featuredContracts: FeaturedContracts;
   public serializer: Serializer;
 
   public async initialize(
@@ -45,7 +50,7 @@ export default class DefaultFilterWorkerLoaderDependencies
       contracts,
       false
     );
-    this.featured = await FeaturedCreator.create(
+    this.featuredContracts = await FeaturedContractsCreator.create(
       mongoSource,
       config.featured,
       featuredCriteria

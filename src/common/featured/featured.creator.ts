@@ -6,20 +6,20 @@ import {
 import { FeaturedContractMongoCollection } from './featured-contract.mongo.collection';
 import { FeaturedContractMongoMapper } from './featured-contract.mongo.mapper';
 import {
-  Featured,
   FeaturedConfig,
   FeaturedContractDataCriteria,
+  FeaturedContracts,
   RepositoryImpl,
   log,
 } from '@alien-worlds/api-history-tools';
 import { EosRpcSourceImpl, EosSmartContractServiceImpl } from '@alien-worlds/eos';
 
-export class FeaturedCreator {
+export class FeaturedContractsCreator {
   public static async create(
     mongo: MongoSource | MongoConfig,
     config: FeaturedConfig,
     featuredCriteria: FeaturedContractDataCriteria
-  ): Promise<Featured> {
+  ): Promise<FeaturedContracts> {
     let mongoSource: MongoSource;
 
     log(` *  Featured ... [starting]`);
@@ -40,7 +40,11 @@ export class FeaturedCreator {
       ''
     );
 
-    const featured = new Featured(repository, smartContractService, featuredCriteria);
+    const featured = new FeaturedContracts(
+      repository,
+      smartContractService,
+      featuredCriteria
+    );
 
     log(` *  Featured ... [ready]`);
 
