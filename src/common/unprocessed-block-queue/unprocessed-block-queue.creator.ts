@@ -28,7 +28,8 @@ export class UnprocessedBlockQueueCreator {
       new UnprocessedBlockMongoCollection(mongoSource),
       new UnprocessedBlockMongoMapper(),
       config.maxBytesSize,
-      config.batchSize
+      config.batchSize,
+      config.fastLaneBatchSize,
     );
 
     log(` *  Unprocessed Block Queue ... [ready]`);

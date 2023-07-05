@@ -7,62 +7,59 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@alien-worlds/api-core@^0.0.151":
-  version "0.0.151"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.151/90f3fda4958c18a705ee34300f47a46f8a3e4f63#90f3fda4958c18a705ee34300f47a46f8a3e4f63"
-  integrity sha512-EkQjZ34F3srCD97b0TE+Lju05pod5gxPlUnezMV9Bq0R1xp0XLGnbSIqpO6Y2UfIJY7PHpFaHWpce+q2rQs4aA==
+"@alien-worlds/api-core@^0.0.155":
+  version "0.0.155"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-core/0.0.155/33c08092422d3b41d3a6b215c06931d7eabd85bd#33c08092422d3b41d3a6b215c06931d7eabd85bd"
+  integrity sha512-pF0L5KDXzcaaYGNheIrgLg+y+GzINOOHxvxA9jGLyt7MrBr/adV0P016B9EK+BN9W2JVo+BCwsjAleji64mDPQ==
   dependencies:
     inversify "^6.0.1"
-    nanoid "^3.0.0"
-    node-fetch "2"
+    node-fetch "2.6.6"
     reflect-metadata "^0.1.13"
 
-"@alien-worlds/api-history-tools@^0.0.141":
-  version "0.0.141"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-history-tools/0.0.141/3652820b9d875e4ea97285aebdf348ba29bde5c7#3652820b9d875e4ea97285aebdf348ba29bde5c7"
-  integrity sha512-kRsxEFo8T2rkoO7yZEkpKGoVSVpzvZC4H5DJo1KcKMjoEiLuwwVvpKawhMR+wdIaDJiLSFdw/0erxPbL3UHx+g==
+"@alien-worlds/api-history-tools@^0.0.142":
+  version "0.0.142"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-history-tools/0.0.142/4ff33f0dc09eb7edbdc17649c0cd2bb4af2c1731#4ff33f0dc09eb7edbdc17649c0cd2bb4af2c1731"
+  integrity sha512-GFbCjeWLQQSyq/ze0FhvKds3ye69ZfGk1NcQ2HQDpl/w/fAox1+jcFFGBgbPlf9A+a2GBnELb8p7j2zLy/+qxg==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
-    "@alien-worlds/block-reader" "^0.0.14"
-    "@alien-worlds/broadcast" "^0.0.10"
+    "@alien-worlds/api-core" "^0.0.155"
+    "@alien-worlds/block-reader" "^0.0.16"
+    "@alien-worlds/broadcast" "^0.0.11"
     "@alien-worlds/workers" "^0.0.7"
     async "^3.2.4"
     commander "^10.0.1"
     crypto "^1.0.1"
     express "^4.18.2"
-    node-fetch "2"
     ts-node "^10.9.1"
 
-"@alien-worlds/block-reader@^0.0.14":
-  version "0.0.14"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/block-reader/0.0.14/ef19b83824dae6eeebf08a2d3bd77e430e493759#ef19b83824dae6eeebf08a2d3bd77e430e493759"
-  integrity sha512-F/E94qnZ8Ok9UcKbCzEmARw4VKjYXoox6BPR48g9L7RjtGvBmFii1TIB3+/aosExEHOLmnhD9wA+TBP+NnmEPg==
-  dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
-
-"@alien-worlds/broadcast@^0.0.10":
-  version "0.0.10"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/broadcast/0.0.10/978171234ce921b91f7951a4a113d56aba9c1f00#978171234ce921b91f7951a4a113d56aba9c1f00"
-  integrity sha512-ILKkn197zxilBKCml2USIyggYNAHzhojfnic+Rj3fmX0nA0Uzz8hHOHj/IOaGTeP8neaGt1dx8sQCPciNY6xZw==
-  dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
-    nanoid "^3.0.0"
-    node-fetch "2"
-
-"@alien-worlds/eos@^0.0.16":
+"@alien-worlds/block-reader@^0.0.16":
   version "0.0.16"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.16/2857c94491496a938086fc307116bfbff45a9902#2857c94491496a938086fc307116bfbff45a9902"
-  integrity sha512-Zkgeo4rNidiQiBLVx54XdYajDn6kjQ2RO72Nw20aQ5lPkCdpX4YPILSIzmRD2qGRijSsvTjfL8369tfs7wHKmA==
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/block-reader/0.0.16/0cf464bf819e52d18184359db6ba51f77e78c4ca#0cf464bf819e52d18184359db6ba51f77e78c4ca"
+  integrity sha512-9KSPCOEtkJwNzV0/z0wNRoaMVcQSSyPPXGxlS8dMdopd+USN9lg43j+Dj6jEI2AaWFC3Zqk4uuICOaoUFN05aA==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
+    "@alien-worlds/api-core" "^0.0.155"
+
+"@alien-worlds/broadcast@^0.0.11":
+  version "0.0.11"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/broadcast/0.0.11/ca88eb95dfa89b5351b71c3c95fed417dcf6cf0c#ca88eb95dfa89b5351b71c3c95fed417dcf6cf0c"
+  integrity sha512-qFM7Kyqv3uUVPgfRIcai+IAFty5VsTOndq++J5K7GDPlV1GIKryqmBSpBghReNDtGbFF/bTfU6XxZmyQdfqg9Q==
+  dependencies:
+    "@alien-worlds/api-core" "^0.0.155"
+    nanoid "^3.0.0"
+
+"@alien-worlds/eos@^0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/eos/0.0.17/3239448ffefa2911efe25063d5a66f1e0f8273a8#3239448ffefa2911efe25063d5a66f1e0f8273a8"
+  integrity sha512-7zfEARthKjnWc5vBVtsJeJlXEjbe5OVS6C4gnOHFbpombu0GSkpz/sFbBDHJek3EG+m+mSKhbro1rb4NC5rngQ==
+  dependencies:
+    "@alien-worlds/api-core" "^0.0.155"
     eosjs "^22.1.0"
 
-"@alien-worlds/storage-mongodb@^0.0.22":
-  version "0.0.22"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.22/d9bc5540f82a16abbfa64ebec22a1732f60b3f35#d9bc5540f82a16abbfa64ebec22a1732f60b3f35"
-  integrity sha512-5bwxRLohvizPuLJXgppzGF7dfDmEQtLHFJCGM+l6CHQ4OOnd4kleO/15379wpI1QVxiYd0ZjGwbBw+JdSeKhQQ==
+"@alien-worlds/storage-mongodb@^0.0.24":
+  version "0.0.24"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/storage-mongodb/0.0.24/a995fd2bbe9d36c7c12042b2af273e2242a96dd5#a995fd2bbe9d36c7c12042b2af273e2242a96dd5"
+  integrity sha512-i4M04mdQCHyuPLu4QAAEhPxz6c6lcFKSCszSLswojJdq6vzQsRkP1MGEqJP3hRl97IcWdEsGswvvkn02UDdYEw==
   dependencies:
-    "@alien-worlds/api-core" "^0.0.151"
+    "@alien-worlds/api-core" "^0.0.155"
     mongodb "4.9.1"
 
 "@alien-worlds/workers@^0.0.7":
@@ -3076,10 +3073,10 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-node-fetch@2:
-  version "2.6.12"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.12.tgz#02eb8e22074018e3d5a83016649d04df0e348fba"
-  integrity sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==
+node-fetch@2.6.6:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.6.tgz#1751a7c01834e8e1697758732e9efb6eeadfaf89"
+  integrity sha512-Z8/6vRlTUChSdIgMa51jxQ4lrw/Jy5SOW10ObaA47/RElsAN2c5Pn8bTgFGWn/ibwzXTE8qwr1Yzx28vsecXEA==
   dependencies:
     whatwg-url "^5.0.0"
 
