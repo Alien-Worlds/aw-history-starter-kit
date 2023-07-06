@@ -1,11 +1,7 @@
-import { WorkerLoaderDependencies } from '@alien-worlds/workers';
-import { BlockReader } from '@alien-worlds/block-reader';
 import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
 import {
-  BlockRangeScanner,
-  BlockState,
   ReaderConfig,
-  UnprocessedBlockQueue,
+  ReaderWorkerLoaderDependencies,
 } from '@alien-worlds/api-history-tools';
 import { BlockReaderCreator } from '../common/block-reader/block-reader.creator';
 import {
@@ -15,14 +11,10 @@ import {
 } from '../common';
 
 /**
- * An abstract class representing a ReaderWorkerLoader dependencies.
- * @class ReaderWorkerLoaderDependencies
+ * An abstract class representing a default ReaderWorkerLoader dependencies.
+ * @class DefaultReaderWorkerLoaderDependencies
  */
-export class ReaderWorkerLoaderDependencies extends WorkerLoaderDependencies {
-  public blockReader: BlockReader;
-  public blockState: BlockState;
-  public blockQueue: UnprocessedBlockQueue;
-  public scanner: BlockRangeScanner;
+export class DefaultReaderWorkerLoaderDependencies extends ReaderWorkerLoaderDependencies {
 
   public async initialize(config: ReaderConfig<MongoConfig>): Promise<void> {
     const mongo = await MongoSource.create(config.database);
