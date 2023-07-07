@@ -163,10 +163,15 @@ export * from './dao-worlds.delta-processor';
 ...
 
 // ./processors/dao-worlds.trace-processor.ts
-import { ActionTraceProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
+import { ActionTraceProcessor, ActionTraceProcessorModel, ProcessorSharedData } from '@alien-worlds/history-tools-starter-kit';
 
-export default class DaoWorldsTraceProcessor extends ActionTraceProcessor {
-  public async run(model: ProcessorTaskModel): Promise<void> {
+type ContractData = { [key: string]: unknown };
+
+export default class DaoWorldsTraceProcessor extends ActionTraceProcessor<
+  ContractData,
+  ProcessorSharedData
+> {
+  public async run(model: ActionTraceProcessorModel<ContractData>): Promise<void> {
     try {
       //... all of your operations
       this.resolve();
@@ -177,10 +182,15 @@ export default class DaoWorldsTraceProcessor extends ActionTraceProcessor {
 }
 
 // ./processors/dao-worlds.delta-processor.ts
-import { DeltaProcessor, ProcessorTaskModel } from '@alien-worlds/history-tools-starter-kit';
+import { DeltaProcessor, DeltaProcessorModel, ProcessorSharedData } from '@alien-worlds/history-tools-starter-kit';
 
-export default class DaoWorldsDeltaProcessor extends DeltaProcessor {
-  public async run(model: ProcessorTaskModel): Promise<void> {
+type ContractData = { [key: string]: unknown };
+
+export default class DaoWorldsDeltaProcessor extends DeltaProcessor<
+  ContractData,
+  ProcessorSharedData
+> {
+  public async run(model: DeltaProcessorModel<ContractData>): Promise<void> {
     try {
       //... all of your operations
       this.resolve();
