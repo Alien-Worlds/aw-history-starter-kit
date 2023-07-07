@@ -22,6 +22,7 @@ import {
 } from '@alien-worlds/storage-mongodb';
 import { ProcessortaskQueueCreator } from '../common';
 import path from 'path';
+import { EosSerializer } from '@alien-worlds/eos';
 
 export class DefaultProcessorDependencies implements ProcessorDependencies {
   public broadcastClient: BroadcastClient;
@@ -29,6 +30,7 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
   public featuredDeltas: Featured<ContractDeltaMatchCriteria>;
   public processorTaskQueue: ProcessorTaskQueue;
   public processorsPath: string;
+  public serializer: EosSerializer;
   public databaseConfigBuilder: DatabaseConfigBuilder = buildMongoConfig;
 
   public readonly workerLoaderDependenciesPath = path.join(
@@ -81,6 +83,8 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
         },
         { shipDeltaMessageName: ['table_delta_v0'] }
       );
+
+      this.serializer = new EosSerializer();
 
       return Result.withoutContent();
     } catch (error) {

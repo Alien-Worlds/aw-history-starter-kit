@@ -35,8 +35,8 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@alien-worlds/api-history-tools": "^0.0.142",
-    "@alien-worlds/eos": "^0.0.17",
-    "@alien-worlds/storage-mongodb": "^0.0.24"
+    "@alien-worlds/api-history-tools": "^0.0.143",
+    "@alien-worlds/eos": "^0.0.18",
+    "@alien-worlds/storage-mongodb": "^0.0.25"
   }
 }

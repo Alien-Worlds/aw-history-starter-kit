@@ -1,4 +1,3 @@
-import { EosSerializer } from '@alien-worlds/eos';
 import {
   ProcessorConfig,
   ProcessorWorkerLoaderDependencies,
@@ -13,7 +12,6 @@ export class DefaultProcessorWorkerLoaderDependencies
   implements ProcessorWorkerLoaderDependencies
 {
   public dataSource: MongoSource;
-  public serializer: EosSerializer;
   public processorsPath: string;
 
   public async initialize(
@@ -21,7 +19,6 @@ export class DefaultProcessorWorkerLoaderDependencies
     processorsPath: string
   ): Promise<void> {
     this.dataSource = await MongoSource.create(config.database);
-    this.serializer = new EosSerializer();
     this.processorsPath = processorsPath;
   }
 }
