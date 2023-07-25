@@ -25,4 +25,15 @@ export class BlockStateMongoMapper extends MongoMapper<
       mapper: value => value,
     });
   }
+
+  public toEntity(model: BlockStateMongoModel): BlockStateModel {
+    const { block_number, actions, tables, last_modified_timestamp } = model;
+
+    return {
+      lastModifiedTimestamp: last_modified_timestamp,
+      blockNumber: block_number.toBigInt(),
+      actions,
+      tables,
+    };
+  }
 }
