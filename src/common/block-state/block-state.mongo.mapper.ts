@@ -1,4 +1,4 @@
-import { BlockStateModel } from '@alien-worlds/api-history-tools';
+import { BlockStateModel, parseToBigInt } from '@alien-worlds/api-history-tools';
 import { BlockStateMongoModel } from './block-state.mongo.types';
 import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 
@@ -31,7 +31,7 @@ export class BlockStateMongoMapper extends MongoMapper<
 
     return {
       lastModifiedTimestamp: last_modified_timestamp,
-      blockNumber: block_number.toBigInt(),
+      blockNumber: parseToBigInt(block_number),
       actions,
       tables,
     };
