@@ -1,6 +1,6 @@
 {
   "name": "@alien-worlds/history-tools-starter-kit",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "packageManager": "yarn@3.2.3",
   "main": "build/index.js",
