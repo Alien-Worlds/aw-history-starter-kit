@@ -11,6 +11,7 @@ export class ExpressApi extends Api<Express> {
     const {
       config: { port },
     } = this;
+
     this.app.listen(port, () => {
       log(`Server is running at http://localhost:${port}`);
     });
