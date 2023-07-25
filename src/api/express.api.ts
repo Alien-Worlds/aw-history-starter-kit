@@ -1,9 +1,9 @@
 import express, { Express } from 'express';
 
-import { Api, ApiConfig, log } from '@alien-worlds/api-history-tools';
+import { Api, log } from '@alien-worlds/api-history-tools';
 export class ExpressApi extends Api<Express> {
-  constructor(config: ApiConfig) {
-    super(config);
+  constructor() {
+    super();
     this.app = express();
   }
 
