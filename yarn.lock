@@ -16,10 +16,10 @@
     node-fetch "2.6.6"
     reflect-metadata "^0.1.13"
 
-"@alien-worlds/api-history-tools@^0.0.148":
-  version "0.0.148"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-history-tools/0.0.148/0dda856a94d9182750df4d79bbd37f40f68d64df#0dda856a94d9182750df4d79bbd37f40f68d64df"
-  integrity sha512-PX4BvYy1cERvv+eHro1V3Ksiqv37dv5Ih5b4ARAiwPxWWIAzo1mz7ommYIlm6mAe0agUSpt0VMGVOICCjrjSKQ==
+"@alien-worlds/api-history-tools@^0.0.149":
+  version "0.0.149"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/api-history-tools/0.0.149/e5dbf7e465e9cd7def7837f3164e64de66a5b77a#e5dbf7e465e9cd7def7837f3164e64de66a5b77a"
+  integrity sha512-BK0IYnOlThGCSCKTUPZ2dBs/vQmnkK2M2VUm8dPjNwEKn3GyVFa8TSNtrb+6+e6GYG6zoLRpU9St7nLF7uNa8w==
   dependencies:
     "@alien-worlds/api-core" "^0.0.158"
     "@alien-worlds/block-reader" "^0.0.18"
