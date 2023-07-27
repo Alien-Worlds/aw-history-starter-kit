@@ -2,14 +2,14 @@ import {
   MongoConfig,
   MongoQueryBuilders,
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
-import { BlockState, log } from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-storage-mongodb';
+import { BlockState, log } from '@alien-worlds/aw-history';
 
 import { UpdateBlockNumberMongoQueryBuilder } from './query-builders/update-block-number.mongo.query-builder';
 import { BlockStateMongoMapper } from './block-state.mongo.mapper';
 import { BlockStateCollection } from './block-state.mongo.collection';
 
-export class BlockStateCreator {
+export class BlockStateFactory {
   public static async create(mongo: MongoSource | MongoConfig) {
     log(` *  Block State ... [starting]`);
     const mapper = new BlockStateMongoMapper();

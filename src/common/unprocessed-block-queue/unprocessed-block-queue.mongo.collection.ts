@@ -1,7 +1,6 @@
-import { DataSourceError } from '@alien-worlds/api-core';
-import { MongoCollectionSource, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoCollectionSource, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { BlockMongoModel } from './unprocessed-block-queue.mongo.types';
-import { UnprocessedBlockSource } from '@alien-worlds/api-history-tools';
+import { DataSourceError, UnprocessedBlockSource } from '@alien-worlds/aw-history';
 
 export class UnprocessedBlockMongoCollection
   extends MongoCollectionSource<BlockMongoModel>

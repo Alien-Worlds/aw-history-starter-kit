@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import { parseToBigInt } from '@alien-worlds/api-history-tools';
+import { parseToBigInt } from '@alien-worlds/aw-history';
 import { BlockRangeScanModel } from './block-range-scanner.mongo.types';
 import {
   MongoCollectionSource,
   MongoDB,
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 
 /**
  * Block range scan nodes data source from the mongo database

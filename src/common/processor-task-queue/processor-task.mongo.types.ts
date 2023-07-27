@@ -1,5 +1,5 @@
-import { ProcessorTaskError } from '@alien-worlds/api-history-tools';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { ProcessorTaskError } from '@alien-worlds/aw-history';
+import { MongoDB } from '@alien-worlds/aw-storage-mongodb';
 
 export type ProcessorTaskMongoModel = {
   _id?: MongoDB.ObjectId;

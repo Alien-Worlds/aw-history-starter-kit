@@ -7,9 +7,9 @@ import {
   ReaderConfig,
   ReaderDependencies,
   Result,
-} from '@alien-worlds/api-history-tools';
-import { MongoConfig, buildMongoConfig } from '@alien-worlds/storage-mongodb';
-import { BlockRangeScannerCreator } from '../common';
+} from '@alien-worlds/aw-history';
+import { MongoConfig, buildMongoConfig } from '@alien-worlds/aw-storage-mongodb';
+import { BlockRangeScannerFactory } from '../common';
 import path from 'path';
 
 /**
@@ -29,7 +29,7 @@ export class DefaultReaderDependencies implements ReaderDependencies {
   public async initialize(config: ReaderConfig<MongoConfig>): Promise<Result> {
     try {
       this.broadcastClient = new BroadcastTcpClient(config.broadcast, 'reader');
-      this.scanner = await BlockRangeScannerCreator.create(
+      this.scanner = await BlockRangeScannerFactory.create(
         config.database,
         config.scanner
       );

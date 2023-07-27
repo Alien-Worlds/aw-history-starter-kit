@@ -4,7 +4,7 @@ import {
   MongoConfig,
   MongoSource,
   buildMongoConfig,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import {
   BroadcastClient,
   BroadcastTcpClient,
@@ -15,8 +15,8 @@ import {
   FilterDependencies,
   Result,
   UnprocessedBlockQueue,
-} from '@alien-worlds/api-history-tools';
-import { BlockMongoModel, UnprocessedBlockQueueCreator } from '../common';
+} from '@alien-worlds/aw-history';
+import { BlockMongoModel, UnprocessedBlockQueueFactory } from '../common';
 
 export class DefaultFilterDependencies implements FilterDependencies {
   public broadcastClient: BroadcastClient;
@@ -34,7 +34,7 @@ export class DefaultFilterDependencies implements FilterDependencies {
     try {
       const mongoSource = await MongoSource.create(config.database);
 
-      this.unprocessedBlockQueue = await UnprocessedBlockQueueCreator.create(
+      this.unprocessedBlockQueue = await UnprocessedBlockQueueFactory.create(
         mongoSource,
         config.unprocessedBlockQueue
       );

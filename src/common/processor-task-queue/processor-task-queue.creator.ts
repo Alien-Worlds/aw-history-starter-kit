@@ -2,8 +2,8 @@ import {
   ProcessorTaskQueue,
   ProcessorTaskQueueConfig,
   log,
-} from '@alien-worlds/api-history-tools';
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-history';
+import { MongoConfig, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { ProcessorTaskMongoCollection } from './processor-task.mongo.collection';
 import { ProcessorTaskMongoMapper } from './processor-task.mongo.mapper';
 import { UnsuccessfulProcessorTaskSource } from './unsuccessful-processor-task.mongo.collection';

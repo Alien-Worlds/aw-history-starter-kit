@@ -6,8 +6,8 @@ import {
   Failure,
   Result,
   Route,
-} from '@alien-worlds/api-history-tools';
-import { buildMongoConfig } from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-history';
+import { buildMongoConfig } from '@alien-worlds/aw-storage-mongodb';
 import { ExpressApi } from './express.api';
 
 export class DefaultApiDependencies implements ApiDependencies {

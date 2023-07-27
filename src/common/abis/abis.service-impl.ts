@@ -1,10 +1,5 @@
-import { AbiServiceConfig } from '@alien-worlds/eos';
-import {
-  AbiService,
-  ContractEncodedAbi,
-  log,
-  fetch,
-} from '@alien-worlds/api-history-tools';
+import { AbiServiceConfig } from '@alien-worlds/aw-antelope';
+import { AbiService, ContractEncodedAbi, log, fetch } from '@alien-worlds/aw-history';
 
 export class AbiServiceImpl implements AbiService {
   constructor(private config: AbiServiceConfig) {}

@@ -1,8 +1,8 @@
 import {
   ProcessorConfig,
   ProcessorWorkerLoaderDependencies,
-} from '@alien-worlds/api-history-tools';
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-history';
+import { MongoConfig, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 
 /**
  * An abstract class representing a ProcessorWorkerLoader dependencies.

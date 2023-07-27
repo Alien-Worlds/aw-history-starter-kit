@@ -1,6 +1,6 @@
-import { BlockStateModel, parseToBigInt } from '@alien-worlds/api-history-tools';
+import { BlockStateModel, parseToBigInt } from '@alien-worlds/aw-history';
 import { BlockStateMongoModel } from './block-state.mongo.types';
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 
 export class BlockStateMongoMapper extends MongoMapper<
   BlockStateModel,

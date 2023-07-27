@@ -2,7 +2,7 @@ import {
   MongoConfig,
   MongoQueryBuilders,
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import { FeaturedContractMongoCollection } from './featured-contract.mongo.collection';
 import { FeaturedContractMongoMapper } from './featured-contract.mongo.mapper';
 import {
@@ -11,10 +11,13 @@ import {
   FeaturedContracts,
   RepositoryImpl,
   log,
-} from '@alien-worlds/api-history-tools';
-import { EosRpcSourceImpl, EosSmartContractServiceImpl } from '@alien-worlds/eos';
+} from '@alien-worlds/aw-history';
+import {
+  AntelopeRpcSourceImpl,
+  AntelopeSmartContractServiceImpl,
+} from '@alien-worlds/aw-antelope';
 
-export class FeaturedContractsCreator {
+export class FeaturedContractsFactory {
   public static async create(
     mongo: MongoSource | MongoConfig,
     config: FeaturedConfig,
@@ -34,8 +37,8 @@ export class FeaturedContractsCreator {
       new FeaturedContractMongoMapper(),
       new MongoQueryBuilders()
     );
-    const smartContractService = new EosSmartContractServiceImpl(
-      new EosRpcSourceImpl(config.rpcUrl),
+    const smartContractService = new AntelopeSmartContractServiceImpl(
+      new AntelopeRpcSourceImpl(config.rpcUrl),
       config.serviceUrl,
       ''
     );

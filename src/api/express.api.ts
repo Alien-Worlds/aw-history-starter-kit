@@ -1,6 +1,6 @@
 import express, { Express } from 'express';
 
-import { Api, log } from '@alien-worlds/api-history-tools';
+import { Api, log } from '@alien-worlds/aw-history';
 export class ExpressApi extends Api<Express> {
   constructor() {
     super();

@@ -1,15 +1,15 @@
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoConfig, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 
 import {
   UnprocessedBlockQueue,
   UnprocessedBlockQueueConfig,
   log,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 import { UnprocessedBlockMongoCollection } from './unprocessed-block-queue.mongo.collection';
 import { UnprocessedBlockMongoMapper } from './unprocessed-block-queue.mongo.mapper';
 import { BlockMongoModel } from './unprocessed-block-queue.mongo.types';
 
-export class UnprocessedBlockQueueCreator {
+export class UnprocessedBlockQueueFactory {
   public static async create(
     mongo: MongoSource | MongoConfig,
     config: UnprocessedBlockQueueConfig
@@ -29,7 +29,7 @@ export class UnprocessedBlockQueueCreator {
       new UnprocessedBlockMongoMapper(),
       config.maxBytesSize,
       config.batchSize,
-      config.fastLaneBatchSize,
+      config.fastLaneBatchSize
     );
 
     log(` *  Unprocessed Block Queue ... [ready]`);

@@ -2,18 +2,18 @@ import {
   MongoConfig,
   MongoQueryBuilders,
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import { AbisMongoMapper } from './abis.mongo.mapper';
 import {
   Abis,
   AbisRepositoryImpl,
   AbisServiceConfig,
   log,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 import { AbisMongoCollection } from './abis.mongo.collection';
 import { AbiServiceImpl } from './abis.service-impl';
 
-export class AbisCreator {
+export class AbisFactory {
   public static async create(
     mongo: MongoSource | MongoConfig,
     config: AbisServiceConfig,

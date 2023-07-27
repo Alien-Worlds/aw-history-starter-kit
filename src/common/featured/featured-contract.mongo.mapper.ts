@@ -1,6 +1,6 @@
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { FeaturedContractMongoModel } from './featured.mongo.types';
-import { FeaturedContract, parseToBigInt } from '@alien-worlds/api-history-tools';
+import { FeaturedContract, parseToBigInt } from '@alien-worlds/aw-history';
 
 /**
  * Class representing a FeaturedContractMongoMapper

@@ -1,5 +1,5 @@
-import { Query, QueryBuilder } from '@alien-worlds/api-history-tools';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { Query, QueryBuilder } from '@alien-worlds/aw-history';
+import { MongoDB } from '@alien-worlds/aw-storage-mongodb';
 
 export type UpdateBlockNumberQueryArgs = { blockNumber: bigint };
 

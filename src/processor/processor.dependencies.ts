@@ -14,15 +14,15 @@ import {
   ProcessorDependencies,
   ProcessorTaskQueue,
   Result,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 import {
   MongoConfig,
   MongoSource,
   buildMongoConfig,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import { ProcessortaskQueueCreator } from '../common';
 import path from 'path';
-import { EosSerializer } from '@alien-worlds/eos';
+import { AntelopeSerializer } from '@alien-worlds/aw-antelope';
 
 export class DefaultProcessorDependencies implements ProcessorDependencies {
   public broadcastClient: BroadcastClient;
@@ -30,7 +30,7 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
   public featuredDeltas: Featured<ContractDeltaMatchCriteria>;
   public processorTaskQueue: ProcessorTaskQueue;
   public processorsPath: string;
-  public serializer: EosSerializer;
+  public serializer: AntelopeSerializer;
   public databaseConfigBuilder: DatabaseConfigBuilder = buildMongoConfig;
 
   public readonly workerLoaderDependenciesPath = path.join(
@@ -84,7 +84,7 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
         { shipDeltaMessageName: ['table_delta_v0'] }
       );
 
-      this.serializer = new EosSerializer();
+      this.serializer = new AntelopeSerializer();
 
       return Result.withoutContent();
     } catch (error) {

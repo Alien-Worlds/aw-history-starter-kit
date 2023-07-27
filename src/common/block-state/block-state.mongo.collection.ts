@@ -1,4 +1,4 @@
-import { MongoCollectionSource, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoCollectionSource, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { BlockStateMongoModel } from './block-state.mongo.types';
 /**
  * Represents a collection of BlockStateDocument objects in a MongoDB database.

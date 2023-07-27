@@ -1,4 +1,4 @@
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB } from '@alien-worlds/aw-storage-mongodb';
 
 /*
   We need to keep tree_depth in _id because if the entire scan will use only one node,

@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { BroadcastClient } from '@alien-worlds/broadcast';
-import { AbisCreator } from '../common/abis';
+import { BroadcastClient } from '@alien-worlds/aw-broadcast';
+import { AbisFactory } from '../common/abis';
 import {
   MongoConfig,
   MongoSource,
   buildMongoConfig,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import {
   BootstrapDependencies,
   Abis,
@@ -21,11 +21,11 @@ import {
   BroadcastTcpClient,
   Failure,
   FeaturedContracts,
-} from '@alien-worlds/api-history-tools';
-import { FeaturedContractsCreator } from '../common/featured';
-import { BlockRangeScannerCreator } from '../common/block-range-scanner';
-import { BlockStateCreator } from '../common/block-state';
-import { BlockchainServiceCreator } from '../common';
+} from '@alien-worlds/aw-history';
+import { FeaturedContractsFactory } from '../common/featured';
+import { BlockRangeScannerFactory } from '../common/block-range-scanner';
+import { BlockStateFactory } from '../common/block-state';
+import { AntelopeBlockchainServiceFactory } from '@alien-worlds/aw-antelope';
 
 export class DefaultBootstrapDependencies implements BootstrapDependencies {
   public broadcastClient: BroadcastClient;
@@ -48,15 +48,15 @@ export class DefaultBootstrapDependencies implements BootstrapDependencies {
         config.broadcast,
         'bootstrap'
       );
-      this.featuredContracts = await FeaturedContractsCreator.create(
+      this.featuredContracts = await FeaturedContractsFactory.create(
         mongoSource,
         config.featured,
         featuredCriteria
       );
-      this.abis = await AbisCreator.create(mongoSource, config.abis, contracts, true);
-      this.scanner = await BlockRangeScannerCreator.create(mongoSource, config.scanner);
-      this.blockState = await BlockStateCreator.create(mongoSource);
-      this.blockchain = await BlockchainServiceCreator.create(config.blockchain);
+      this.abis = await AbisFactory.create(mongoSource, config.abis, contracts, true);
+      this.scanner = await BlockRangeScannerFactory.create(mongoSource, config.scanner);
+      this.blockState = await BlockStateFactory.create(mongoSource);
+      this.blockchain = await AntelopeBlockchainServiceFactory.create(config.blockchain);
 
       return Result.withoutContent();
     } catch (error) {

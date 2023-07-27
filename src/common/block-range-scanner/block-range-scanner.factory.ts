@@ -1,17 +1,17 @@
 import { BlockRangeScanMongoSource } from './block-range-scan.mongo.source';
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoConfig, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { BlockRangeScanMongoMapper } from './block-range-scanner.mongo.mapper';
 import {
   BlockRangeScanConfig,
   BlockRangeScanRepository,
   BlockRangeScanner,
   log,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 
 /**
  * @class
  */
-export class BlockRangeScannerCreator {
+export class BlockRangeScannerFactory {
   public static async create(
     mongo: MongoSource | MongoConfig,
     config: BlockRangeScanConfig

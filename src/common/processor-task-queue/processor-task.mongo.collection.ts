@@ -2,13 +2,13 @@ import {
   MongoCollectionSource,
   MongoDB,
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 import { ProcessorTaskMongoModel } from './processor-task.mongo.types';
 import {
   DataSourceError,
   ProcessorTaskQueueConfig,
   ProcessorTaskSource,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 
 export class ProcessorTaskMongoCollection
   extends MongoCollectionSource<ProcessorTaskMongoModel>

@@ -1,13 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
-
-import {
-  PropertyMapping,
-  parseToBigInt,
-  removeUndefinedProperties,
-} from '@alien-worlds/api-core';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { ProcessorTaskMongoModel } from './processor-task.mongo.types';
-import { ProcessorTask } from '@alien-worlds/api-history-tools';
+import { ProcessorTask, PropertyMapping, parseToBigInt, removeUndefinedProperties } from '@alien-worlds/aw-history';
 
 export class ProcessorTaskMongoMapper<
   EntityType = ProcessorTask,

@@ -1,6 +1,6 @@
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { ContractEncodedAbiMongoModel } from './abis.mongo.types';
-import { ContractEncodedAbi, parseToBigInt } from '@alien-worlds/api-history-tools';
+import { ContractEncodedAbi, parseToBigInt } from '@alien-worlds/aw-history';
 
 export class AbisMongoMapper extends MongoMapper<
   ContractEncodedAbi,

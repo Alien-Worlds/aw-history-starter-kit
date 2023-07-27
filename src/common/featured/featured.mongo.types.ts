@@ -1,4 +1,4 @@
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB } from '@alien-worlds/aw-storage-mongodb';
 
 export type FeaturedContractMongoModel = {
   _id?: MongoDB.ObjectId;

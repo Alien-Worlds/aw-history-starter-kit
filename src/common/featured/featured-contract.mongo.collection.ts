@@ -1,4 +1,4 @@
-import { MongoCollectionSource, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoCollectionSource, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { FeaturedContractMongoModel } from './featured.mongo.types';
 
 /**

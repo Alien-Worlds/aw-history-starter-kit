@@ -8,16 +8,14 @@ import {
   MissingCriteriaError,
   ProcessorTaskQueue,
   Serializer,
-  ShipAbis,
-} from '@alien-worlds/api-history-tools';
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-history';
+import { MongoConfig, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import {
-  AbisCreator,
-  FeaturedContractsCreator,
+  AbisFactory,
+  FeaturedContractsFactory,
   ProcessortaskQueueCreator,
 } from '../common';
-import { EosSerializer } from '@alien-worlds/eos';
-import { ShipAbisCreator } from '../common/ship/ship-abis.creator';
+import { AntelopeSerializer, ShipAbis, ShipAbisFactory } from '@alien-worlds/aw-antelope';
 
 export default class DefaultFilterWorkerLoaderDependencies
   implements FilterWorkerLoaderDependencies
@@ -44,18 +42,18 @@ export default class DefaultFilterWorkerLoaderDependencies
       mongoSource,
       config.processorTaskQueue
     );
-    this.abis = await AbisCreator.create(
+    this.abis = await AbisFactory.create(
       mongoSource,
       config.abis.service,
       contracts,
       false
     );
-    this.featuredContracts = await FeaturedContractsCreator.create(
+    this.featuredContracts = await FeaturedContractsFactory.create(
       mongoSource,
       config.featured,
       featuredCriteria
     );
-    this.shipAbis = await ShipAbisCreator.create(mongoSource);
-    this.serializer = new EosSerializer();
+    this.shipAbis = await ShipAbisFactory.create(mongoSource);
+    this.serializer = new AntelopeSerializer();
   }
 }

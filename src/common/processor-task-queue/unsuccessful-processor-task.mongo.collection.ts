@@ -1,4 +1,4 @@
-import { MongoCollectionSource, MongoSource } from '@alien-worlds/storage-mongodb';
+import { MongoCollectionSource, MongoSource } from '@alien-worlds/aw-storage-mongodb';
 import { ProcessorTaskMongoModel } from './processor-task.mongo.types';
 
 export class UnsuccessfulProcessorTaskSource extends MongoCollectionSource<ProcessorTaskMongoModel> {

@@ -1,9 +1,9 @@
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import {
   BlockRangeScan,
   BlockRangeScanParent,
   parseToBigInt,
-} from '@alien-worlds/api-history-tools';
+} from '@alien-worlds/aw-history';
 import {
   BlockRangeScanIdModel,
   BlockRangeScanModel,

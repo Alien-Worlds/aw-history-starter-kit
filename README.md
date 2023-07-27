@@ -12,9 +12,9 @@ Essentially, the History Tools Starter Kit equips you with a ready-to-use framew
 
 This package is dependent on the following packages:
 
-- [@alien-worlds/api-history-tools](https://github.com/Alien-Worlds/api-history-tools)
-- [@alien-worlds/eos](https://github.com/Alien-Worlds/eos)
-- [@alien-worlds/storage-mongodb](https://github.com/Alien-Worlds/storage-mongodb)
+- [@alien-worlds/aw-history](https://github.com/Alien-Worlds/api-history-tools)
+- [@alien-worlds/aw-antelope](https://github.com/Alien-Worlds/eos)
+- [@alien-worlds/aw-storage-mongodb](https://github.com/Alien-Worlds/storage-mongodb)
 
 ## Table of Contents
 
@@ -59,7 +59,7 @@ const unprocessedBlockQueue = await UnprocessedBlockQueueCreator.create(
 );
 ```
 
-_More information about individual components can be found in this repository [@alien-worlds/api-history-tools](https://github.com/Alien-Worlds/api-history-tools)._
+_More information about individual components can be found in this repository [@alien-worlds/aw-history](https://github.com/Alien-Worlds/api-history-tools)._
 
 ## Processes
 
@@ -97,7 +97,7 @@ The remaining folders name correspond to the history tools processes and contain
    - _`Abis`_
    - _`ShipAbis`_
    - _`FeaturedContracts`_
-   - _`EosSerializer`_
+   - _`AntelopeSerializer`_
 
 4. **Processor:** Requires `DefaultProcessorDependencies` passed to the processor command. Dependencies:
 
@@ -109,7 +109,7 @@ The remaining folders name correspond to the history tools processes and contain
    The second file is `ProcessorWorkerLoaderDependencies` which is instantiated in the worker loader and the path to this file is given in `DefaultProcessorDependencies`. Dependencies:
 
    - _`MongoSource`_
-   - _`EosSerializer`_
+   - _`AntelopeSerializer`_
 
 
 ## Tutorials
