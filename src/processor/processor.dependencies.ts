@@ -22,7 +22,7 @@ import {
 } from '@alien-worlds/aw-storage-mongodb';
 import { ProcessortaskQueueCreator } from '../common';
 import path from 'path';
-import { AntelopeSerializer } from '@alien-worlds/aw-antelope';
+import { AntelopeSerializer, AntelopeSerializerFactory } from '@alien-worlds/aw-antelope';
 
 export class DefaultProcessorDependencies implements ProcessorDependencies {
   public broadcastClient: BroadcastClient;
@@ -84,7 +84,7 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
         { shipDeltaMessageName: ['table_delta_v0'] }
       );
 
-      this.serializer = new AntelopeSerializer();
+      this.serializer = await AntelopeSerializerFactory.create(mongoSource);
 
       return Result.withoutContent();
     } catch (error) {

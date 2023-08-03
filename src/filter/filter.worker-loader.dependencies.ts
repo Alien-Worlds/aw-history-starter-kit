@@ -15,14 +15,13 @@ import {
   FeaturedContractsFactory,
   ProcessortaskQueueCreator,
 } from '../common';
-import { AntelopeSerializer, ShipAbis, ShipAbisFactory } from '@alien-worlds/aw-antelope';
+import { AntelopeSerializer, AntelopeSerializerFactory } from '@alien-worlds/aw-antelope';
 
 export default class DefaultFilterWorkerLoaderDependencies
   implements FilterWorkerLoaderDependencies
 {
   public processorTaskQueue: ProcessorTaskQueue;
   public abis: Abis;
-  public shipAbis: ShipAbis;
   public featuredContracts: FeaturedContracts;
   public serializer: Serializer;
 
@@ -53,7 +52,7 @@ export default class DefaultFilterWorkerLoaderDependencies
       config.featured,
       featuredCriteria
     );
-    this.shipAbis = await ShipAbisFactory.create(mongoSource);
-    this.serializer = new AntelopeSerializer();
+
+    this.serializer = await AntelopeSerializerFactory.create(mongoSource);
   }
 }
