@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@alien-worlds/aw-antelope@^0.0.37":
-  version "0.0.37"
-  resolved "https://npm.pkg.github.com/download/@alien-worlds/aw-antelope/0.0.37/40674ef336da2e70cece69fd4a59fd8dd89ded34#40674ef336da2e70cece69fd4a59fd8dd89ded34"
-  integrity sha512-KwjvT0sjwlOWB7/z1sI2B77AtEk6/kyNXNYx5to1lMpKhRZe0ELinG49sGzM+B48d0sKbBp+RP96Go8IiGcMPg==
+"@alien-worlds/aw-antelope@^0.0.38":
+  version "0.0.38"
+  resolved "https://npm.pkg.github.com/download/@alien-worlds/aw-antelope/0.0.38/ac9001748325d674d59fbe796540bac47b311c17#ac9001748325d674d59fbe796540bac47b311c17"
+  integrity sha512-GSkxuhtSCDO/4WmszVjkQUnJsaiEWzSsyI29Z/jfL1JK7WfUKLzE/p5l9HaHj26yOfCmz/ooyj6UKIPGuRI1cw==
   dependencies:
     "@alien-worlds/aw-core" "^0.0.13"
     "@alien-worlds/aw-storage-mongodb" "^0.0.7"
