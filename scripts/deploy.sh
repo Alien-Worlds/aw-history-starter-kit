@@ -6,7 +6,7 @@ error_exit()
     exit 1
 }
 
-# major | minor | patch
+# major | minor | patch | pre
 TYPE=patch
 
 if [[ $1 =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
@@ -15,11 +15,14 @@ if [[ $1 =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
 elif [[ $1 == "major" ]] || [[ $1 == "minor" ]] || [[ $1 == "patch" ]]
   then
     TYPE=$1
+elif [[ $1 == "pre" ]]
+  then
+    TYPE=prepatch
 elif [[ $1 == "" ]]
   then
     TYPE=patch
 else
-    printf "Unknown update type \"%s\".\n- Please use \"major\" | \"minor\" | \"patch\"\n" "$1"
+    printf "Unknown update type \"%s\".\n- Please use \"major\" | \"minor\" | \"patch\" | \"pre\"\n" "$1"
     exit 1;
 fi
 

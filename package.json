@@ -39,9 +39,9 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@alien-worlds/aw-antelope": "^0.0.40",
-    "@alien-worlds/aw-history": "^0.0.9",
-    "@alien-worlds/aw-storage-mongodb": "^0.0.10",
+    "@alien-worlds/aw-antelope": "^0.0.43",
+    "@alien-worlds/aw-history": "^0.0.11-0",
+    "@alien-worlds/aw-storage-mongodb": "^0.0.14",
     "express": "^4.18.2"
   }
 }
