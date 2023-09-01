@@ -33,10 +33,10 @@
     node-fetch "2.6.6"
     reflect-metadata "^0.1.13"
 
-"@alien-worlds/aw-history@^0.0.11-1":
-  version "0.0.11-1"
-  resolved "https://registry.yarnpkg.com/@alien-worlds/aw-history/-/aw-history-0.0.11-1.tgz#f8acb7e2cca7f915979a874af7ddc8770783da6e"
-  integrity sha512-8+pPh/KDR+QN1lTC6q1cnt9RuT9NYbaxQ4hy7HURFn/4wI79mMbVzMBKGPsBVID4I4+KpjcE8/+UKaO9wnfdiA==
+"@alien-worlds/aw-history@^0.0.11-3":
+  version "0.0.11-3"
+  resolved "https://registry.yarnpkg.com/@alien-worlds/aw-history/-/aw-history-0.0.11-3.tgz#e4e1692dfa908c7e953db7879b9be7bb212e31d9"
+  integrity sha512-RnFZ627Imrjaxx1H6uMYOUwojePfFgN4PTLbSOnhB2xsLlA6L7bbuvKT4VwKQEW7/9ntqrIIIO09HKFw9DIoFQ==
   dependencies:
     "@alien-worlds/aw-broadcast" "^0.0.12"
     "@alien-worlds/aw-core" "^0.0.21"
