@@ -1,9 +1,9 @@
-import { BlockStateModel, parseToBigInt } from '@alien-worlds/aw-history';
+import { BlockStateEntity, parseToBigInt } from '@alien-worlds/aw-history';
 import { BlockStateMongoModel } from './block-state.mongo.types';
 import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 
 export class BlockStateMongoMapper extends MongoMapper<
-  BlockStateModel,
+  BlockStateEntity,
   BlockStateMongoModel
 > {
   constructor() {
@@ -26,7 +26,7 @@ export class BlockStateMongoMapper extends MongoMapper<
     });
   }
 
-  public toEntity(model: BlockStateMongoModel): BlockStateModel {
+  public toEntity(model: BlockStateMongoModel): BlockStateEntity {
     const { block_number, actions, tables, last_modified_timestamp } = model;
 
     return {
