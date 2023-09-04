@@ -84,7 +84,7 @@ export class DefaultProcessorDependencies implements ProcessorDependencies {
         { shipDeltaMessageName: ['table_delta_v0'] }
       );
 
-      this.serializer = await AntelopeSerializerFactory.create(mongoSource);
+      this.serializer = await AntelopeSerializerFactory.create(mongoSource, false);
 
       return Result.withoutContent();
     } catch (error) {
